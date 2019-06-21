@@ -1,7 +1,7 @@
 sub bubble-sort(@data) {
     @data[$_ - 1, $_] .= reverse
         if [>] @data[$_ - 1, $_]
-            for 1 .. @data.elems - 1;
+            for 1 ..^ @data;
 
     bubble-sort(@data) unless [<=] @data;
 }
