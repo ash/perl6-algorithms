@@ -3,7 +3,7 @@ multi sub quick-sort(*@data where @data.elems <= 1) {
 }
 
 multi sub quick-sort(*@data where @data.elems > 1) {
-    my $pivot = @data.pop;
+    my $pivot = @data.shift;
 
     return flat(quick-sort(@data.grep(* < $pivot)), $pivot, quick-sort(@data.grep(* >= $pivot)));
 }
