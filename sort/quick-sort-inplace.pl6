@@ -7,10 +7,10 @@ sub quick-sort(@data, $start = 0, $end = @data.elems - 1) {
         
         my $i = $start;
         for $start ..^ $end -> $j {
-            if @data[$j] <= $pivot {
-                @data[$i, $j] = @data[$j, $i];
-                $i++;
-            }
+            next if @data[$j] > $pivot;
+
+            @data[$i, $j] = @data[$j, $i];
+            $i++;
         }
         @data[$i, $end] = @data[$end, $i];
 
