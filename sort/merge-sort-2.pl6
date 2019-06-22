@@ -7,7 +7,7 @@ sub merge-sort(@data) {
     my @r = merge-sort(@data[$mid .. *-1]);
 
     my @a;
-    @a.push(@l[0] < @r[0] ?? @l.shift !! @r.shift) while @l &+ @r;
+    @a.push(@l[0] < @r[0] ?? @l.shift !! @r.shift) while @l and @r;
     @a.push(|@l, |@r);
     
     return @a;
