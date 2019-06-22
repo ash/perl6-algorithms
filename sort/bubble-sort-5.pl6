@@ -1,5 +1,5 @@
 sub bubble-sort(@data) {
-    for ^@data X 1 ..^ @data {
+    for ^@data Z 1 ..^ @data {
         my $n = $_[1];
         @data[$n - 1, $n] .= reverse if [>] @data[$n - 1, $n];
     }
