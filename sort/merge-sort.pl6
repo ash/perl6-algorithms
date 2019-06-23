@@ -27,6 +27,7 @@ sub merge-sort(@data) {
     @r = merge-sort(@r);
 
     my @a = merge(@l, @r);
+
     return @a;
 }
 
