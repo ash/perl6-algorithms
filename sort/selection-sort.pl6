@@ -5,7 +5,7 @@ sub selection-sort(@data) {
         my $min = @data[0];
         my $min_n = 0;
         for ^ @data -> $i {
-            if $@data[$i] < $min {
+            if @data[$i] < $min {
                 $min = @data[$i];
                 $min_n = $i;
             }
