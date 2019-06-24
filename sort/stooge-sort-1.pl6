@@ -5,7 +5,7 @@ sub stooge-sort(@data) {
     
     my $l = @data[0 ..^ Int(2/3 * ^@data)];
     my $r = @data[Int(1/3 * ^@data) .. *-1];
-    
+    say $l.WHAT;
     stooge-sort($l);
     stooge-sort($r);
     stooge-sort($l);
