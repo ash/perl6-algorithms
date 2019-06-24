@@ -1,6 +1,6 @@
 sub pancake-sort(@data) {
     {
-        @data[0 .. @data[0..$_].maxpairs[0].key] .= reverse;
+        @data[0 .. @data[0..$_].maxpairs[*-1].key] .= reverse;
         @data[0 .. $_] .= reverse;
     } for @data.elems - 1 ... 1;
 }
