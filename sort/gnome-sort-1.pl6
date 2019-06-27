@@ -1,12 +1,13 @@
 sub gnome-sort(@data) {
-    my $done = False;
-    while !$done {
-        $done = True;
-        for 1 ..^ @data -> $i {
-            if [>] @data[$i - 1, $i] {
-                @data[$i - 1, $i].=reverse;
-                $done = False;
-            }
+    my $pos = 0;
+
+    while $pos != @data.elems - 1 {
+        if !$pos or @data[$pos] >= @data[$pos - 1] {
+            $pos++;
+        }
+        else {
+            @data[$pos, $pos - 1] .= reverse;
+            $pos--;
         }
     }
 }

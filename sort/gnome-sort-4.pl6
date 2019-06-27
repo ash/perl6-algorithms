@@ -1,10 +1,10 @@
 sub gnome-sort(@data) {
 
-    sub f($i) {
-        return 1 unless $i;
+    multi sub f(0) { 1 }
 
-        return $i + 1 if [>=] @data[$i, $i - 1];
-        
+    multi sub f($i where [>=] @data[$i, $i - 1]) { $i + 1 }
+
+    multi sub f($i) {
         @data[$i, $i - 1] .= reverse;
 
         return $i - 1;

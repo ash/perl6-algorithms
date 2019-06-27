@@ -1,8 +1,19 @@
 sub gnome-sort(@data) {
-    my $done = False;
-    while !$done {
-        $done = True;
-        $done = False, @data[$_ - 1, $_].=reverse if [>] @data[$_ - 1, $_] for 1 ..^ @data;
+
+    sub f($i) {
+        return 1 unless $i;
+
+        if @data[$i] >= @data[$i - 1] {
+            return $i + 1;
+        }
+        else {
+            @data[$i, $i - 1] .= reverse;
+            return $i - 1;
+        }
+    }
+
+    for 1, -> $i {f($i)} ... @data.elems - 1 {
+        
     }
 }
 
