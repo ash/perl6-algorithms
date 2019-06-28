@@ -8,7 +8,7 @@ sub odd-even-sort(@data) {
                 @data[$i, $i + 1].=reverse;
             }
         }
-        loop ($i = 1; $i < @data - 1; $i += 2) {
+        loop ($i = 1; $i < @data; $i += 2) {
             if [>] @data[$i, $i + 1] {
                 $done = False;
                 @data[$i, $i + 1].=reverse;
