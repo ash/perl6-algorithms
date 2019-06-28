@@ -3,7 +3,7 @@ sub odd-even-sort(@data) {
     repeat {
         $done = True;
         $done--, @data[$_, $_ + 1].=reverse if [>] @data[$_, $_ + 1]
-            for flat((0, 2 ... @data - 2), (1, 3 ... @data - 2));
+            for flat((0, 2 ... @data - 2), (1, 3 ... @data - 1));
     } until $done;
 }
 
