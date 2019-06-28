@@ -1,7 +1,7 @@
 sub gnome-sort(@data) {
     my $pos = 0;
 
-    while $pos != @data.elems - 1 {
+    while $pos != @data.elems {
         if !$pos or @data[$pos] >= @data[$pos - 1] {
             $pos++;
         }

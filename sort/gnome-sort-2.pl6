@@ -12,8 +12,7 @@ sub gnome-sort(@data) {
         }
     }
 
-    for 1, -> $i {f($i)} ... @data.elems - 1 {
-        
+    for 1, -> $i {f($i)} ... @data.elems {
     }
 }
 

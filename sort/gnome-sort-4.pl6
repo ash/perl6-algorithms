@@ -10,7 +10,7 @@ sub gnome-sort(@data) {
         return $i - 1;
     }
 
-    1, -> $i {f($i)} ... @data.elems - 1;
+    1, -> $i {f($i)} ... @data.elems;
 }
 
 my @data = 4, 5, 7, 1, 46, 78, 2, 2, 1, 9, 10;
